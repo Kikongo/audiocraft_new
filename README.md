@@ -17,10 +17,11 @@ pip install -U yt-dpt-ejs
 ```
 Также необходимо получить cookies из своего браузера, чтобы обойти авторизацию. Можно использовать расширение для Chrome
 https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc
-Сохранить в под названием cookies.txt
+Сохранить под названием cookies.txt
 
 ## Cкрипты
 Скрипты для скачивания аудио и формирования json файлов находятся в папке scripts
+Примеры собранного датасета можно посмотреть в папке musiccaps_audio 
 
 Обучение модели можно найти в файле AudioCraft_training.ipynb
 
