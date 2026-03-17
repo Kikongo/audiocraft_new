@@ -1,0 +1,67 @@
+# @package __global__
+
+# This is a minimal debugging configuration
+# for MusicGen training solver
+defaults:
+  - musicgen/default
+  - /model: lm/musicgen_lm
+  - override /model/lm/model_scale: xsmall
+  - override /dset: audio/musiccaps_audio
+  - _self_
+
+autocast: false
+compression_model_checkpoint: //pretrained/debug_compression_model
+transformer_lm:
+  n_q: 4
+  card: 400
+
+conditioners:
+  description:
+    model: t5
+    t5:
+      name: t5-small
+
+codebooks_pattern:
+  modeling: parallel
+
+channels: 1
+sample_rate: 32000
+
+deadlock:
+  use: false  # deadlock detection
+
+dataset:
+  batch_size: 4
+  num_workers: 2
+  segment_duration: 10
+  sample_on_weight: false  # Uniform sampling all the way
+  sample_on_duration: false  # Uniform sampling all the way
+
+generate:
+  audio:
+    strategy: peak
+  lm:
+    use_sampling: false
+    top_k: 0
+    top_p: 0.0
+
+checkpoint:
+  save_last: true
+  save_every: 50
+  keep_last: 10
+
+optim:
+  epochs: 2
+  updates_per_epoch: 10
+  optimizer: adamw
+  lr: 1e-4
+  ema:
+    use: true
+    updates: 10
+    device: cuda
+
+logging:
+  log_tensorboard: true
+
+schedule:
+  lr_scheduler: null
