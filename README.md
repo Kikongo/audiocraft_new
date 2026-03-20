@@ -19,6 +19,8 @@ pip install -U yt-dpt-ejs
 https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc
 Сохранить под названием cookies.txt
 
+В файле .env создать переменную HF_token со своими данными
+
 ## Cкрипты
 Скрипты для скачивания аудио и формирования json файлов находятся в папке scripts
 Примеры собранного датасета можно посмотреть в папке musiccaps_audio 
