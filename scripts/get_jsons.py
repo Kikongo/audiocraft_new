@@ -2,6 +2,9 @@ import os
 import json
 from datasets import load_dataset
 from openai import OpenAI
+import dotenv
+
+dotenv.load_dotenv()
 
 HF_token = os.getenv("HF_TOKEN", HF_token)
 
